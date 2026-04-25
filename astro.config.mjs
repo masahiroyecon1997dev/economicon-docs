@@ -6,20 +6,18 @@ import starlight from '@astrojs/starlight';
 export default defineConfig({
 	integrations: [
 		starlight({
-			title: 'My Docs',
-			defaultLocale: 'ja',
+			title: 'Economicon',
+			favicon: '/icon.ico',
+			defaultLocale: 'root',
 			locales: {
-				ja: { label: '日本語', lang: 'ja' },
+				root: { label: '日本語', lang: 'ja' },
 				en: { label: 'English', lang: 'en' },
 			},
 			social: [{ icon: 'github', label: 'GitHub', href: '' }],
 			sidebar: [
 				{
 					label: 'Guides',
-					items: [
-						// Each item here is one entry in the navigation menu.
-						{ label: 'Example Guide', slug: 'guides/example' },
-					],
+					autogenerate: { directory: 'guides' },
 				},
 				{
 					label: 'Reference',

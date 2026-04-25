@@ -1,40 +1,58 @@
 ---
-title: Welcome to Starlight
-description: Get started building your docs site with Starlight.
-template: splash # Remove or comment out this line to display the site sidebar on this page.
+title: Economicon
+description: コードなしで使える計量経済分析デスクトップアプリ。OLS・固定効果・2SLS・DID・RDD など主要な推定モデルを GUI 操作だけで実行できます。Windows 向けスタンドアロンアプリ。
+template: splash
 hero:
-  tagline: Congrats on setting up a new Starlight project!
+  tagline: 計量経済学を、もっと身近に、直感的に。
   image:
-    file: ../../assets/houston.webp
+    html: '<img src="/icon.ico" alt="Economicon アプリアイコン" width="128" height="128">'
   actions:
-    - text: Example Guide
-      link: /guides/example/
+    - text: 今すぐダウンロード（v0.4.0）
+      link: https://github.com/masahiroyecon1997dev/Economicon/releases
       icon: right-arrow
-    - text: Read the Starlight docs
-      link: https://starlight.astro.build
+      variant: primary
+    - text: アプリの概要を見る
+      link: /introduction/
       icon: external
-      variant: minimal
 ---
 
-import { Card, CardGrid } from '@astrojs/starlight/components';
+import { Card, CardGrid, Steps } from '@astrojs/starlight/components';
 
-## Next steps
+## 主な特徴
 
 <CardGrid stagger>
-	<Card title="Update content" icon="pencil">
-		Edit `src/content/docs/index.mdx` to see this page change.
-	</Card>
-	<Card title="Change page layout" icon="document">
-		Delete `template: splash` in `src/content/docs/index.mdx` to display a
-		sidebar on this page.
-	</Card>
-	<Card title="Add new content" icon="add-document">
-		Add Markdown or MDX files to `src/content/docs` to create new pages.
-	</Card>
-	<Card title="Configure your site" icon="setting">
-		Edit your `sidebar` and other config in `astro.config.mjs`.
-	</Card>
-	<Card title="Read the docs" icon="open-book">
-		Learn more in [the Starlight Docs](https://starlight.astro.build/).
-	</Card>
+  <Card title="高速なデータ処理" icon="rocket">
+    Rust と Polars エンジンを搭載。大規模なデータセットでもストレスのない分析が可能です。
+  </Card>
+  <Card title="主要な推定モデル" icon="puzzle">
+    OLS・固定効果・変量効果・2SLS/GMM・DID・RDD・Heckman 選択モデルなど、実証分析に必要なモデルを標準搭載。
+  </Card>
+  <Card title="直感的な UI" icon="laptop">
+    プログラミング不要。フィルタリング・列操作・シミュレーションデータ生成もマウス操作で完結します。
+  </Card>
+  <Card title="結果をすぐにコピー" icon="document">
+    分析結果を Markdown・LaTeX 形式でクリップボードにコピー。論文やレポートにそのまま貼り付けられます。
+  </Card>
 </CardGrid>
+
+## インストール方法
+
+<Steps>
+1. **ダウンロード**
+
+   [GitHub Releases ページ](https://github.com/masahiroyecon1997dev/Economicon/releases) から最新の `Economicon_x.x.x_x64-setup.exe` をダウンロードします。
+
+2. **インストーラーを実行**
+
+   ダウンロードした `.exe` ファイルをダブルクリックして実行します。SmartScreen の警告が表示された場合は「詳細情報」→「実行」を選択してください。
+
+3. **起動**
+
+   インストール完了後、デスクトップのショートカットまたはスタートメニューから起動します。
+</Steps>
+
+:::note
+現在は **Windows 専用**です。macOS / Linux 対応は予定されていません。
+:::
+
+{/* PLACEHOLDER: デモ動画（YouTube embed または GIF）を後日ここに追加予定 */}

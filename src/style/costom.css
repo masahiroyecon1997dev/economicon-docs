@@ -1,0 +1,25 @@
+/* src/style/custom.css */
+
+:root {
+  /* アプリのアクセント色（#3498db）をベースに設定 */
+  --sl-color-accent-low: #1d394e;
+  --sl-color-accent: #3498db;
+  --sl-color-accent-high: #9bcdef;
+
+  /* テキストや背景にアプリのメインカラー（#2c3e50）のニュアンスを追加 */
+  --sl-color-white: #ffffff;
+  --sl-color-gray-1: #f8f9fa;
+  --sl-color-gray-2: #e5e7eb;
+  --sl-color-gray-3: #a0aec0;
+  --sl-color-gray-4: #4a5568;
+  --sl-color-gray-5: #2c3e50; /* メインカラー */
+  --sl-color-gray-6: #1a202c;
+  --sl-color-black: #111827;
+}
+
+/* ダークモード時の微調整 */
+:root[data-theme='dark'] {
+  --sl-color-accent-low: #223344;
+  --sl-color-accent: #3498db;
+  --sl-color-accent-high: #459ad3;
+}
