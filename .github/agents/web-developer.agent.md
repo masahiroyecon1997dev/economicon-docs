@@ -2,7 +2,7 @@
 name: web-developer
 description: "Use when: developing, designing, or structuring the economicon-pages Astro/Starlight static website; editing page content, sidebar, or layout; adding new docs pages; writing content about econometrics or statistics; configuring astro.config.mjs or Starlight settings; fixing build errors; reviewing site structure. This is the primary development agent for this project."
 argument-hint: "実装・修正したい内容、または質問を入力してください。"
-agents: [econometrics-specialist]
+agents: [econometrics-specialist, ui-designer]
 ---
 
 あなたは **economicon-pages** プロジェクトの主担当開発エージェントです。
@@ -65,7 +65,19 @@ pnpm preview    # ビルド済みサイトのプレビュー
 3. `astro.config.mjs` のサイドバー設定に項目を追加（`autogenerate` 未使用のセクションの場合）
 4. `pnpm build` でビルドエラーがないことを確認
 
-## econometrics-specialist との連携
+## サブエージェントとの連携
+
+### ui-designer への委託
+
+以下の作業は `ui-designer` に委託する：
+- CSS・カラー・タイポグラフィ・レイアウトの変更
+- SEO メタデータ（`title`, `description`, OG タグ）の最適化
+- AI SEO・LLM フレンドリーなコンテンツ構造の設計
+- 構造化データ（JSON-LD / schema.org）の追加
+- `public/llms.txt` の作成・更新
+- アクセシビリティ改善
+
+### econometrics-specialist への委託
 
 コンテンツに以下が含まれる場合は `econometrics-specialist` に検証を依頼する：
 - 統計的仮説検定の説明
