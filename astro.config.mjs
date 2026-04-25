@@ -16,11 +16,15 @@ export default defineConfig({
 			social: [{ icon: 'github', label: 'GitHub', href: '' }],
 			sidebar: [
 				{
-					label: 'Guides',
+					label: 'Economiconについて',
+					autogenerate: { directory: 'about' },
+				},
+				{
+					label: 'ガイド',
 					autogenerate: { directory: 'guides' },
 				},
 				{
-					label: 'Reference',
+					label: 'リファレンス',
 					autogenerate: { directory: 'reference' },
 				},
 			],

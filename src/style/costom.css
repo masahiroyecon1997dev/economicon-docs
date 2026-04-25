@@ -1,25 +1,32 @@
 /* src/style/custom.css */
 
+/* ライトモード */
 :root {
-  /* アプリのアクセント色（#3498db）をベースに設定 */
-  --sl-color-accent-low: #1d394e;
+  /* アクセント色（アプリの #3498db ベース） */
+  --sl-color-accent-low: #d6eaf8;   /* 薄い青 tint（アクティブ背景など） */
   --sl-color-accent: #3498db;
-  --sl-color-accent-high: #9bcdef;
+  --sl-color-accent-high: #1a6fa8;  /* アクセント上のテキスト用（濃い青） */
 
-  /* テキストや背景にアプリのメインカラー（#2c3e50）のニュアンスを追加 */
+  /* グレースケール（アプリの #2c3e50 系に統一） */
   --sl-color-white: #ffffff;
-  --sl-color-gray-1: #f8f9fa;
-  --sl-color-gray-2: #e5e7eb;
+  --sl-color-gray-1: #f8f9fa;       /* app secondary */
+  --sl-color-gray-2: #e5e7eb;       /* app border */
   --sl-color-gray-3: #a0aec0;
   --sl-color-gray-4: #4a5568;
-  --sl-color-gray-5: #2c3e50; /* メインカラー */
+  --sl-color-gray-5: #2c3e50;       /* app primary */
   --sl-color-gray-6: #1a202c;
   --sl-color-black: #111827;
 }
 
-/* ダークモード時の微調整 */
+/* ダークモード（アプリの dark テーマに最低限寄せる） */
 :root[data-theme='dark'] {
-  --sl-color-accent-low: #223344;
+  /* アクセント色 */
+  --sl-color-accent-low: #1e3a52;   /* 暗い青 tint（ダーク時のアクティブ背景） */
   --sl-color-accent: #3498db;
-  --sl-color-accent-high: #459ad3;
+  --sl-color-accent-high: #9bcdef;  /* ダーク背景上のテキスト用（明るい青） */
+
+  /* アプリ dark secondary (#1a2236) をページ背景に反映 */
+  --sl-color-gray-6: #1a2236;       /* app dark secondary（最暗背景） */
+  --sl-color-gray-5: #2c3e50;       /* app primary（サイドバー等） */
+  --sl-color-gray-1: #e2e8f0;       /* app dark text-main */
 }
