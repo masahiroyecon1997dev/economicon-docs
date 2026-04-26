@@ -1,23 +1,215 @@
 ---
 title: Economicon
-description: A GUI-only desktop app for econometric analysis. Run OLS, fixed effects, 2SLS, DID, RDD and more — no coding required. Standalone app for Windows.
+description: A Windows desktop app for econometric analysis through a GUI. Start with the quickstart, follow a learning roadmap, and find the right pages for teaching and research use.
 hero:
   tagline: Making Econometrics More Accessible and Intuitive.
   image:
     html: '<img src="/icon.ico" alt="Economicon app icon" width="128" height="128">'
   actions:
-    - text: Download Now (v0.4.0)
-      link: https://github.com/masahiroyecon1997dev/Economicon/releases
+    - text: View Quickstart
+      link: /en/guides/quickstart/
       icon: right-arrow
       variant: primary
-    - text: Learn More
-      link: /en/introduction/
+    - text: See App Overview
+      link: /en/about/introduction/
       icon: external
+      variant: secondary
 ---
 
-import { Card, CardGrid, Steps } from '@astrojs/starlight/components';
+import { Card, CardGrid, LinkButton, LinkCard, Steps } from '@astrojs/starlight/components';
 
-## Key Features
+<div class="home-chip-row" aria-label="Economicon highlights">
+  <span class="home-chip">Free under the MIT License</span>
+  <span class="home-chip">Windows standalone app</span>
+  <span class="home-chip">GUI-first analysis workflow</span>
+  <span class="home-chip">Markdown / LaTeX output</span>
+</div>
+
+<section class="home-section home-summary">
+  <p class="home-kicker">Overview</p>
+  <h2>What You Can Learn on This Page</h2>
+  <p class="home-lead">
+    Economicon is a Windows app that lets you import data and try econometric analysis without writing code.
+    This page shows where to start, which pages to read next, and where to check guidance before using the app in teaching or research.
+  </p>
+  <ul class="home-summary-list">
+    <li>How to get from installation to a first analysis quickly</li>
+    <li>Where instructors should look before sharing the app in class</li>
+    <li>Which pages to review before using output in reports or research</li>
+  </ul>
+</section>
+
+<section class="home-section home-paths">
+  <p class="home-kicker">Start Here</p>
+  <h2>Choose the Best Entry Point for You</h2>
+  <p class="home-section-intro">
+    Start from the path that matches your goal and you will reach the right information faster.
+  </p>
+  <div class="home-card-grid home-audience-grid">
+    <CardGrid>
+      <Card title="If You Are New to Economicon" icon="laptop">
+        Best for users who want to install the app and run a first OLS model as quickly as possible.
+
+        <a href="/en/guides/quickstart/">Open the quickstart</a>
+      </Card>
+      <Card title="If You Teach with It" icon="document">
+        Best for instructors who want to share the app in lectures, exercises, seminars, or workshops.
+
+        <a href="/en/about/contact/">See contact options</a>
+      </Card>
+      <Card title="If You Use It for Research Prep" icon="puzzle">
+        Best for users who want to check scope, caveats, and publication-related guidance first.
+
+        <a href="/en/reference/disclaimer-and-terms/">Read the disclaimer and terms</a>
+      </Card>
+    </CardGrid>
+  </div>
+</section>
+
+<section class="home-section home-benefits">
+  <p class="home-kicker">Why Economicon</p>
+  <h2>Why It Feels Safe to Start Here</h2>
+  <div class="home-card-grid home-benefit-grid">
+    <CardGrid stagger>
+      <Card title="No Code Needed" icon="laptop">
+        The workflow goes from data import to estimation through the GUI, so you are less likely to get blocked by syntax or setup issues.
+      </Card>
+      <Card title="Core Models in One Place" icon="puzzle">
+        You can explore OLS, fixed effects, 2SLS, DID, RDD, and related models inside one desktop workflow.
+      </Card>
+      <Card title="Results Are Easy to Reuse" icon="document">
+        Output can be copied in Markdown or LaTeX format, which helps when moving results into reports, papers, or teaching materials.
+      </Card>
+      <Card title="Good for Exploration and Learning" icon="rocket">
+        The app is well suited to early-stage exploration and concept learning when you want to inspect patterns before building a full coded workflow.
+      </Card>
+    </CardGrid>
+  </div>
+</section>
+
+<section class="home-section home-start">
+  <p class="home-kicker">Quick Start</p>
+  <h2>Start in Three Steps</h2>
+  <p class="home-section-intro">
+    The full walkthrough lives in the quickstart guide. Here, the goal is just to make the first move obvious.
+  </p>
+  <Steps>
+    1. **Download the installer**
+
+       Get the latest installer from the [GitHub Releases page](https://github.com/masahiroyecon1997dev/Economicon/releases).
+
+    2. **Launch the app and load data**
+
+       Install Economicon, open it, and import a CSV or another supported file. WebView2 may be required on first launch.
+
+    3. **Run your first OLS model**
+
+       Choose the dependent and explanatory variables, run the model, and inspect the coefficients and p-values.
+  </Steps>
+  <p class="home-inline-link">
+    <a href="/en/guides/quickstart/">See the full quickstart guide</a>
+  </p>
+</section>
+
+<section class="home-section home-roadmap-section">
+  <p class="home-kicker">Learning Path</p>
+  <h2>A Reading Order That Keeps Things Simple</h2>
+  <p class="home-section-intro">
+    A good flow is to try the app first, then understand the design idea, then review the feature scope, and finally check the teaching or research notes.
+  </p>
+  <ol class="home-roadmap">
+    <li class="home-roadmap-item">
+      <span class="home-roadmap-step">1</span>
+      <div class="home-roadmap-copy">
+        <p class="home-roadmap-label">Touch the app first</p>
+        <h3><a href="/en/guides/quickstart/">Quickstart</a></h3>
+        <p>Install the app, load data, and run a first OLS model to understand the basic flow.</p>
+      </div>
+    </li>
+    <li class="home-roadmap-item">
+      <span class="home-roadmap-step">2</span>
+      <div class="home-roadmap-copy">
+        <p class="home-roadmap-label">Understand the idea</p>
+        <h3><a href="/en/about/concept/">Why Economicon Exists</a></h3>
+        <p>See how Economicon lowers the barrier created by code-heavy econometrics workflows.</p>
+      </div>
+    </li>
+    <li class="home-roadmap-item">
+      <span class="home-roadmap-step">3</span>
+      <div class="home-roadmap-copy">
+        <p class="home-roadmap-label">Review the scope</p>
+        <h3><a href="/en/about/introduction/">App Overview</a></h3>
+        <p>Check the supported analysis types, output formats, and intended users in one place.</p>
+      </div>
+    </li>
+    <li class="home-roadmap-item">
+      <span class="home-roadmap-step">4</span>
+      <div class="home-roadmap-copy">
+        <p class="home-roadmap-label">Check before teaching or publishing</p>
+        <h3><a href="/en/reference/disclaimer-and-terms/">Disclaimer and Terms</a></h3>
+        <p>Review the guidance for teaching distribution and the recommendation to double-check official results with another method.</p>
+      </div>
+    </li>
+  </ol>
+</section>
+
+<section class="home-section home-trust">
+  <p class="home-kicker">For Teaching and Research</p>
+  <h2>For Instructors and Research Users</h2>
+  <div class="home-card-grid home-trust-grid">
+    <CardGrid>
+      <Card title="For Teaching Use" icon="document">
+        Economicon is available under the MIT License and is suitable for sharing in classes, exercises, seminars, and workshops.
+
+        You can check the contact page if you want to confirm anything about sharing or classroom use.
+      </Card>
+      <Card title="Before Official Research Output" icon="puzzle">
+        The app is useful for exploration and preparation, but results included in papers, reports, or external materials should be checked through another analytical route.
+
+        The details are summarized in the disclaimer and terms page.
+      </Card>
+    </CardGrid>
+  </div>
+</section>
+
+<section class="home-section home-links">
+  <p class="home-kicker">Next Reading</p>
+  <h2>Where to Go Next</h2>
+  <div class="home-link-grid">
+    <LinkCard
+      title="Quickstart"
+      href="/en/guides/quickstart/"
+      description="See the full path from installation to a first OLS run in a screen-by-screen guide."
+    />
+    <LinkCard
+      title="App Overview"
+      href="/en/about/introduction/"
+      description="Review the supported methods, output formats, intended users, and technical stack."
+    />
+    <LinkCard
+      title="Why Economicon Exists"
+      href="/en/about/concept/"
+      description="Understand the role of a GUI-first tool in lowering the barrier to econometrics."
+    />
+    <LinkCard
+      title="Contact"
+      href="/en/about/contact/"
+      description="Find the contact route and the recommended place for bug reports and feature requests."
+    />
+  </div>
+</section>
+
+<section class="home-section home-cta">
+  <p class="home-kicker">Ready to Explore</p>
+  <h2>Start with Just One Page</h2>
+  <p class="home-section-intro">
+    If you are new, begin with the quickstart. If you want the big picture first, open the app overview.
+  </p>
+  <div class="home-cta-actions">
+    <LinkButton href="/en/guides/quickstart/" variant="primary" icon="right-arrow">View Quickstart</LinkButton>
+    <LinkButton href="/en/about/introduction/" variant="secondary" icon="external">See App Overview</LinkButton>
+  </div>
+</section>
 
 <CardGrid stagger>
   <Card title="High-Speed Data Processing" icon="rocket">

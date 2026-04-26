@@ -1,32 +1,398 @@
-/* src/style/custom.css */
+/* src/style/costom.css */
 
-/* ライトモード */
 :root {
-  /* アクセント色（アプリの #3498db ベース） */
-  --sl-color-accent-low: #d6eaf8;   /* 薄い青 tint（アクティブ背景など） */
+  --sl-color-accent-low: #d6eaf8;
   --sl-color-accent: #3498db;
-  --sl-color-accent-high: #1a6fa8;  /* アクセント上のテキスト用（濃い青） */
+  --sl-color-accent-high: #1a6fa8;
 
-  /* グレースケール（アプリの #2c3e50 系に統一） */
   --sl-color-white: #ffffff;
-  --sl-color-gray-1: #f8f9fa;       /* app secondary */
-  --sl-color-gray-2: #e5e7eb;       /* app border */
+  --sl-color-gray-1: #f8f9fa;
+  --sl-color-gray-2: #e5e7eb;
   --sl-color-gray-3: #a0aec0;
   --sl-color-gray-4: #4a5568;
-  --sl-color-gray-5: #2c3e50;       /* app primary */
+  --sl-color-gray-5: #2c3e50;
   --sl-color-gray-6: #1a202c;
   --sl-color-black: #111827;
+
+  --eco-surface-page: #ffffff;
+  --eco-surface-muted: #f4f8fb;
+  --eco-surface-accent: #edf5fb;
+  --eco-surface-band: #e7f1f9;
+  --eco-surface-card: #ffffff;
+  --eco-surface-strong: #173044;
+  --eco-text-strong: #162334;
+  --eco-text-muted: #516172;
+  --eco-text-label: #1a6fa8;
+  --eco-text-inverse: #f8fbff;
+  --eco-border-soft: rgba(26, 111, 168, 0.14);
+  --eco-border-strong: rgba(26, 111, 168, 0.28);
+  --eco-shadow-soft: 0 18px 40px rgba(23, 48, 68, 0.08);
+  --eco-shadow-raised: 0 22px 48px rgba(23, 48, 68, 0.14);
+  --eco-radius-card: 1.1rem;
+  --eco-radius-panel: 1.5rem;
+  --eco-space-section: clamp(3rem, 7vw, 5.5rem);
+  --eco-space-stack: clamp(1rem, 2vw, 1.5rem);
 }
 
-/* ダークモード（アプリの dark テーマに最低限寄せる） */
 :root[data-theme='dark'] {
-  /* アクセント色 */
-  --sl-color-accent-low: #1e3a52;   /* 暗い青 tint（ダーク時のアクティブ背景） */
+  --sl-color-accent-low: #1e3a52;
   --sl-color-accent: #3498db;
-  --sl-color-accent-high: #9bcdef;  /* ダーク背景上のテキスト用（明るい青） */
+  --sl-color-accent-high: #9bcdef;
 
-  /* アプリ dark secondary (#1a2236) をページ背景に反映 */
-  --sl-color-gray-6: #1a2236;       /* app dark secondary（最暗背景） */
-  --sl-color-gray-5: #2c3e50;       /* app primary（サイドバー等） */
-  --sl-color-gray-1: #e2e8f0;       /* app dark text-main */
+  --sl-color-gray-6: #1a2236;
+  --sl-color-gray-5: #2c3e50;
+  --sl-color-gray-1: #e2e8f0;
+
+  --eco-surface-page: #101828;
+  --eco-surface-muted: #162233;
+  --eco-surface-accent: #183249;
+  --eco-surface-band: #1b2d40;
+  --eco-surface-card: #132131;
+  --eco-surface-strong: #0f1d2b;
+  --eco-text-strong: #eff6fb;
+  --eco-text-muted: #b7c5d5;
+  --eco-text-label: #9bcdef;
+  --eco-text-inverse: #eff6fb;
+  --eco-border-soft: rgba(155, 205, 239, 0.16);
+  --eco-border-strong: rgba(155, 205, 239, 0.3);
+  --eco-shadow-soft: 0 18px 40px rgba(0, 0, 0, 0.24);
+  --eco-shadow-raised: 0 24px 52px rgba(0, 0, 0, 0.34);
+}
+
+html {
+  background: var(--eco-surface-page);
+}
+
+body {
+  color: var(--eco-text-strong);
+}
+
+@layer starlight.core {
+  [data-has-hero] .hero {
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 1.5rem;
+    padding: clamp(1.5rem, 4vw, 3rem);
+    border: 1px solid var(--eco-border-soft);
+    border-radius: calc(var(--eco-radius-panel) + 0.25rem);
+    background:
+      radial-gradient(circle at top right, rgba(52, 152, 219, 0.18), transparent 34%),
+      linear-gradient(135deg, var(--eco-surface-page), var(--eco-surface-accent));
+    box-shadow: var(--eco-shadow-soft);
+  }
+
+  [data-has-hero] .hero::after {
+    content: '';
+    position: absolute;
+    inset: auto -10% -35% auto;
+    width: 18rem;
+    height: 18rem;
+    border-radius: 999px;
+    background: rgba(52, 152, 219, 0.12);
+    filter: blur(32px);
+    pointer-events: none;
+  }
+
+  [data-has-hero] .hero > * {
+    position: relative;
+    z-index: 1;
+  }
+
+  [data-has-hero] .hero h1 {
+    color: var(--eco-text-strong);
+  }
+
+  [data-has-hero] .hero .tagline {
+    color: var(--eco-text-muted);
+    max-width: 34rem;
+  }
+
+  [data-has-hero] .hero .actions {
+    gap: 0.75rem;
+  }
+
+  .sl-markdown-content > :where(h2, h3) {
+    letter-spacing: -0.02em;
+  }
+
+  .sl-markdown-content a:not(.sl-link-button) {
+    text-underline-offset: 0.18em;
+  }
+
+  .sl-markdown-content .sl-link-button {
+    transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
+  }
+
+  .sl-markdown-content .sl-link-button:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--eco-shadow-soft);
+  }
+
+  .sl-markdown-content .sl-link-button.secondary {
+    border-color: var(--eco-border-strong);
+    background: rgba(255, 255, 255, 0.52);
+    color: var(--eco-text-strong);
+  }
+
+  :root[data-theme='dark'] .sl-markdown-content .sl-link-button.secondary {
+    background: rgba(255, 255, 255, 0.03);
+    color: var(--eco-text-inverse);
+  }
+}
+
+.sl-markdown-content .home-chip-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin: 0 0 2rem;
+}
+
+.sl-markdown-content .home-chip {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.55rem 0.9rem;
+  border: 1px solid var(--eco-border-soft);
+  border-radius: 999px;
+  background: var(--eco-surface-muted);
+  color: var(--eco-text-label);
+  font-size: 0.92rem;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.sl-markdown-content .home-section {
+  margin-block: var(--eco-space-section);
+}
+
+.sl-markdown-content .home-summary,
+.sl-markdown-content .home-roadmap-section,
+.sl-markdown-content .home-cta {
+  padding: clamp(1.4rem, 3vw, 2.2rem);
+  border: 1px solid var(--eco-border-soft);
+  border-radius: var(--eco-radius-panel);
+  box-shadow: var(--eco-shadow-soft);
+}
+
+.sl-markdown-content .home-summary {
+  background: linear-gradient(145deg, var(--eco-surface-muted), var(--eco-surface-accent));
+}
+
+.sl-markdown-content .home-roadmap-section {
+  background: linear-gradient(180deg, var(--eco-surface-accent), var(--eco-surface-page));
+}
+
+.sl-markdown-content .home-cta {
+  background: linear-gradient(135deg, var(--eco-surface-strong), #1f4d6b);
+  color: var(--eco-text-inverse);
+}
+
+.sl-markdown-content .home-cta :where(h2, p) {
+  color: inherit;
+}
+
+.sl-markdown-content .home-kicker {
+  margin: 0 0 0.75rem;
+  color: var(--eco-text-label);
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.sl-markdown-content .home-section h2 {
+  margin: 0;
+  color: var(--eco-text-strong);
+  font-size: clamp(1.7rem, 2vw, 2.3rem);
+}
+
+.sl-markdown-content .home-summary h2,
+.sl-markdown-content .home-cta h2 {
+  color: inherit;
+}
+
+.sl-markdown-content .home-lead,
+.sl-markdown-content .home-section-intro {
+  max-width: 52rem;
+  margin: 1rem 0 0;
+  color: var(--eco-text-muted);
+  font-size: 1.02rem;
+  line-height: 1.75;
+}
+
+.sl-markdown-content .home-summary-list {
+  margin: 1.2rem 0 0;
+  padding-left: 1.25rem;
+  display: grid;
+  gap: 0.7rem;
+  color: var(--eco-text-strong);
+}
+
+.sl-markdown-content .home-card-grid {
+  margin-top: 1.4rem;
+}
+
+.sl-markdown-content .home-card-grid .card {
+  height: 100%;
+  border-color: var(--eco-border-soft);
+  border-radius: var(--eco-radius-card);
+  background: var(--eco-surface-card);
+  box-shadow: var(--eco-shadow-soft);
+  transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
+}
+
+.sl-markdown-content .home-card-grid .card:hover {
+  transform: translateY(-4px);
+  border-color: var(--eco-border-strong);
+  box-shadow: var(--eco-shadow-raised);
+}
+
+.sl-markdown-content .home-card-grid .card .title {
+  color: var(--eco-text-strong);
+}
+
+.sl-markdown-content .home-card-grid .card .body {
+  color: var(--eco-text-muted);
+  line-height: 1.7;
+}
+
+.sl-markdown-content .home-card-grid .card .body a {
+  font-weight: 600;
+}
+
+.sl-markdown-content .home-inline-link {
+  margin: 1rem 0 0;
+  font-weight: 600;
+}
+
+.sl-markdown-content .home-roadmap {
+  list-style: none;
+  margin: 1.5rem 0 0;
+  padding: 0;
+  display: grid;
+  gap: 1rem;
+}
+
+.sl-markdown-content .home-roadmap-item {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 1rem;
+  align-items: start;
+  padding: 1.1rem 1.2rem;
+  border: 1px solid var(--eco-border-soft);
+  border-radius: calc(var(--eco-radius-card) - 0.1rem);
+  background: var(--eco-surface-card);
+  box-shadow: var(--eco-shadow-soft);
+}
+
+.sl-markdown-content .home-roadmap-step {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 999px;
+  background: var(--sl-color-accent);
+  color: var(--sl-color-black);
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+.sl-markdown-content .home-roadmap-label {
+  margin: 0 0 0.3rem;
+  color: var(--eco-text-label);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.sl-markdown-content .home-roadmap-copy h3 {
+  margin: 0 0 0.35rem;
+  font-size: 1.15rem;
+}
+
+.sl-markdown-content .home-roadmap-copy p:last-child {
+  margin: 0;
+  color: var(--eco-text-muted);
+  line-height: 1.7;
+}
+
+.sl-markdown-content .home-link-grid {
+  display: grid;
+  gap: 1rem;
+  margin-top: 1.4rem;
+}
+
+.sl-markdown-content .home-links .sl-link-card {
+  border-color: var(--eco-border-soft);
+  border-radius: var(--eco-radius-card);
+  background: var(--eco-surface-card);
+  box-shadow: var(--eco-shadow-soft);
+  transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
+}
+
+.sl-markdown-content .home-links .sl-link-card:hover {
+  transform: translateY(-3px);
+  background: var(--eco-surface-muted);
+  border-color: var(--eco-border-strong);
+  box-shadow: var(--eco-shadow-raised);
+}
+
+.sl-markdown-content .home-links .sl-link-card .title {
+  color: var(--eco-text-strong);
+}
+
+.sl-markdown-content .home-links .sl-link-card .description,
+.sl-markdown-content .home-links .sl-link-card .icon {
+  color: var(--eco-text-muted);
+}
+
+.sl-markdown-content .home-cta-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.9rem;
+  margin-top: 1.5rem;
+}
+
+@media (min-width: 50rem) {
+  .sl-markdown-content .home-link-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .sl-markdown-content .home-audience-grid .card-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .sl-markdown-content .home-trust-grid .card-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 50rem) {
+  [data-has-hero] .hero {
+    padding: 1.25rem;
+  }
+
+  .sl-markdown-content .home-chip-row {
+    margin-bottom: 1.5rem;
+  }
+
+  .sl-markdown-content .home-roadmap-item {
+    grid-template-columns: 1fr;
+  }
+
+  .sl-markdown-content .home-roadmap-step {
+    margin-bottom: 0.15rem;
+  }
+
+  .sl-markdown-content .home-cta-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .sl-markdown-content .home-cta-actions .sl-link-button {
+    justify-content: center;
+    width: 100%;
+    margin-inline-end: 0;
+  }
 }

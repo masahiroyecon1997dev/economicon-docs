@@ -8,6 +8,7 @@ export default defineConfig({
 		starlight({
 			title: 'Economicon',
 			favicon: '/icon.ico',
+			customCss: ['/src/style/costom.css'],
 			defaultLocale: 'root',
 			locales: {
 				root: { label: '日本語', lang: 'ja' },
