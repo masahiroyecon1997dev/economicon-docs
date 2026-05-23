@@ -59,6 +59,37 @@
   --eco-shadow-raised: 0 24px 52px rgba(0, 0, 0, 0.34);
 }
 
+:root[data-theme='light'] {
+  /* グレースケール（ライトモードは逆順：番号大＝明るい）
+     :root の同名変数より詳細度が高いので正しく上書きできる */
+  --sl-color-white: #1a202c;
+  --sl-color-gray-1: #2c3e50;
+  --sl-color-gray-2: #4a5568;
+  --sl-color-gray-3: #a0aec0;
+  --sl-color-gray-4: #cbd5e0;
+  --sl-color-gray-5: #e5e7eb;
+  --sl-color-gray-6: #f8f9fa;
+  --sl-color-black: #ffffff;
+
+  /* アクセントカラー */
+  --sl-color-accent-low: #d6eaf8;
+  --sl-color-accent: #3498db;
+  --sl-color-accent-high: #1a6fa8;
+
+  /* ヘッダーバーを #2c3e50 に */
+  --sl-color-bg-nav: #2c3e50;
+
+  /* コンテンツ・目次・サイドバーの背景を白に */
+  --sl-color-bg: #ffffff;
+  --sl-color-bg-sidebar: #ffffff;
+}
+
+/* ライトモードのヘッダー：暗い背景に対してテキストを白系に（WCAG AA 準拠） */
+[data-theme='light'] .header {
+  --sl-color-text: #e2e8f0;
+  --sl-color-text-accent: #93c5fd;
+}
+
 html {
   background: var(--eco-surface-page);
 }
