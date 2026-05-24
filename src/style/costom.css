@@ -84,14 +84,21 @@
   --sl-color-bg-sidebar: #ffffff;
 }
 
-/* ライトモードのヘッダー：暗い背景に対してテキストを白系に（WCAG AA 準拠） */
+/* ライトモードのヘッダー：暗い背景(#2c3e50)に対する可読性確保（WCAG AA 準拠） */
 [data-theme='light'] .header {
+  /* テキスト全般 */
   --sl-color-text: #e2e8f0;
   --sl-color-text-accent: #93c5fd;
+  /* Select コンポーネント（言語切り替え・テーマ切り替え）*/
+  --sl-color-gray-2: #cbd5e0;   /* ラベル通常色 */
+  --sl-color-white: #ffffff;    /* ラベルホバー色・アイコンホバー色 */
+  --sl-color-gray-1: #e2e8f0;   /* option 文字色（ドロップダウン展開時） */
 }
 
 html {
   background: var(--eco-surface-page);
+  /* スクロールバーの出現/消失によるレイアウトシフト（ヘッダーガタつき）を防ぐ */
+  scrollbar-gutter: stable;
 }
 
 body {
