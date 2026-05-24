@@ -4,8 +4,6 @@ import starlight from '@astrojs/starlight';
 
 // https://astro.build/config
 export default defineConfig({
-	site: 'https://economicon-docs.github.io', 
-	base: '/economicon-docs/',
 	integrations: [
 		starlight({
 			title: 'Economicon',
