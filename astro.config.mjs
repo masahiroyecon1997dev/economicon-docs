@@ -4,10 +4,12 @@ import starlight from '@astrojs/starlight';
 
 // https://astro.build/config
 export default defineConfig({
+	site: 'https://masahiroyecon1997dev.github.io',
+	base: '/economicon-docs',
 	integrations: [
 		starlight({
 			title: 'Economicon',
-			favicon: '/icon.ico',
+			favicon: 'icon.ico',
 			customCss: ['/src/style/costom.css'],
 			defaultLocale: 'root',
 			locales: {
