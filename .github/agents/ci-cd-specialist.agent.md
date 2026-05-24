@@ -15,3 +15,6 @@ GitHub Actions / GitHub Pagesに精通したCI/CD自動化エキスパート。
 - **Package Management:** `pnpm` (Node.js)
 - **Deploy Target:** GitHub Pages
 - **CI/CD:** GitHub Actions
+
+## 注意
+- GitHub Actionsのワークフローで使用するアクションのバージョン指定は、必ずコミットハッシュを使用して特定のバージョンを指定すること。
