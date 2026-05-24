@@ -1,0 +1,31 @@
+version: 2
+updates:
+  # npm パッケージ（pnpm）
+  - package-ecosystem: npm
+    directory: /
+    schedule:
+      interval: weekly
+      day: monday
+      time: "09:00"
+      timezone: Asia/Tokyo
+    # バージョンアップは 10 日のクールダウン（サプライチェーン攻撃対策）
+    # ※ セキュリティ更新（脆弱性修正）には cooldown は適用されず即時対応
+    cooldown:
+      default-days: 10
+      semver-patch-days: 10
+      semver-minor-days: 10
+      semver-major-days: 10
+    open-pull-requests-limit: 5
+
+  # GitHub Actions 自体のバージョン管理
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: weekly
+      day: monday
+      time: "09:00"
+      timezone: Asia/Tokyo
+    # Actions は SemVer 非対応のため default-days のみ指定
+    cooldown:
+      default-days: 10
+    open-pull-requests-limit: 5
