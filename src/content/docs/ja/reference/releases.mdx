@@ -8,27 +8,123 @@ sidebar:
 最新版と過去の更新履歴をまとめています。
 
 - GitHub Releases: https://github.com/masahiroyecon1997dev/economicon/releases
-- 完全な履歴: [CHANGELOG.md](https://github.com/masahiroyecon1997dev/economicon-docs/blob/dev/CHANGELOG.md)
 
-## v0.4.0 (2026-05-23)
+<div class="changelog-timeline">
 
-### 追加
+  <div class="version-block">
+    <div class="version-header">
+      ### v0.4.0
+      <span class="version-date">2026-05-23</span>
+    </div>
+    
+    <ul>
+      <li>
+        <span class="badge-eco add">追加</span> シミュレーションデータ作成に連番の選択肢を追加
+        <small>※ 詳細: シミュレーションデータ生成機能に、連番オプションを追加。これにより、ユーザーはID列などの連番データを簡単に生成できるようになります。</small>
+      </li>
+      <li>
+        <span class="badge-eco add">追加</span> パネル時間カラム追加機能
+        <small>※ 詳細: パネルデータ分析のための時間カラムを追加する機能を実装。これにより、ユーザーはパネルデータの時間変数を簡単に管理できるようになります。</small>
+      </li>
+      <li>
+        <span class="badge-eco add">追加</span> 基本統計量の出力形式拡張
+        <small>※ 詳細: 基本統計量もマークダウン形式、TEX、テキストで出力できる機能を追加。これにより、ユーザーは分析結果を様々な形式で利用できるようになります。</small>
+      </li>
+      <li>
+        <span class="badge-eco add">追加</span> 信頼区間の出力形式拡張
+        <small>※ 詳細: 信頼区間の出力もマークダウン形式、TEX、テキストで出力できる機能を追加。これにより、ユーザーは信頼区間の結果を様々な形式で利用できるようになります。</small>
+      </li>
+      <li>
+        <span class="badge-eco add">追加</span> サイドバーに分析結果表示
+        <small>※ 詳細: 分析結果をサイドメニューに表示する機能を追加。これにより、ユーザーはデータと分析結果をスイッチングして確認できるようになります。また、データのタブと分析結果のタブが並ぶUIになりました。</small>
+      </li>
+      <li>
+        <span class="badge-eco add">追加</span> 画面構成の変更
+        <small>※ 詳細: 計算や最小二乗法のフォームとデータの変更と分析結果をデータ表示と同様にタブによる表示に変更。これにより、ユーザーはフォームを維持しつつタブを切り替えることで繰り返しの操作が容易になります。</small>
+      </li>
+      <li>
+        <span class="badge-eco add">追加</span> 仮説検定
+        <small>※ 詳細: 仮説検定の機能を追加。これにより、ユーザーは分析結果に基づいて仮説検定を行い、平均や分散の統計的な有意性を評価できるようになります。</small>
+      </li>
+      <li>
+        <span class="badge-eco add">追加</span> グループ別統計量機能
+        <small>※ 詳細: グループ別の基本統計量のデータを作成する機能を追加。これにより、ユーザーはカテゴリ変数ごとに基本統計量を確認できるようになります。</small>
+      </li>
+      <li>
+        <span class="badge-eco add">追加</span> プロットビュー機能
+        <small>※ 詳細: データをプロットで表示する機能を追加。これにより、ユーザーは回帰係数や信頼区間を視覚的に確認できるようになります。</small>
+      </li>
+      <li>
+        <span class="badge-eco add">追加</span> 信頼区間シミュレーション機能
+        <small>※ 詳細: α%（90%, 95%, 99%）信頼区間のサンプリングシミュレーション機能を追加。これにより、ユーザーはα%信頼区間の意味が何を示すかを理解しやすくなります。</small>
+      </li>
+      <li>
+        <span class="badge-eco add">追加</span> 回帰係数の漸近正規性シミュレーション機能
+        <small>※ 詳細: 回帰係数の漸近正規性のシミュレーション機能を追加。これにより、ユーザーは回帰係数が大サンプルで正規分布に従うことを理解しやすくなります。</small>
+      </li>
+      <li>
+        <span class="badge-eco add">追加</span> 一致性シミュレーション機能
+        <small>※ 詳細: 回帰分析の一致性のシミュレーション機能を追加。これにより、ユーザーは回帰分析の推定量がサンプルサイズが大きくなるにつれて真の値に近づくことを理解しやすくなります。</small>
+      </li>
+      <li>
+        <span class="badge-eco add">追加</span> 不偏性シミュレーション機能
+        <small>※ 詳細: 回帰分析の不偏性のシミュレーション機能を追加。これにより、ユーザーは回帰分析の推定量の期待値が真の値と等しいことを理解しやすくなります。</small>
+      </li>
+      <li>
+        <span class="badge-eco add">追加</span> ファイル削除機能
+        <small>※ 詳細: インポート画面のゴミ箱アイコンよりファイル削除が可能になりました。</small>
+      </li>
+      <li>
+        <span class="badge-eco fix">修正</span> 初回起動時の言語設定
+        <small>※ 詳細: 初回起動時（設定ファイル作成時）にOSの言語設定を読み取って、初期設定の言語を自動で切り替えるように修正しました。</small>
+      </li>
+      <li>
+        <span class="badge-eco fix">修正</span> ダイアログのアニメーション
+        <small>※ 詳細: ダイアログが閉じるときにアニメーションなく消えてしまう問題を修正。</small>
+      </li>
+      <li>
+        <span class="badge-eco del">削除</span> 列複製
+        <small>※ 詳細: 列の編集機能と統合し、UI全体の煩雑さを解消してユーザーの操作迷子を防ぐため。</small>
+      </li>
+      <li>
+        <span class="badge-eco internal">内部</span> 分析エンジンのベンチマーク追加
+        <small>※ 詳細: 分析推定の厳密な正確性を担保し続けるため、仮想的なデータに加え、WooldridgeやAERなどの標準的なデータセットを用いた計算整合性テストを自動化しました。</small>
+        </li>
+    </ul>
+  </div>
 
-- シミュレーションデータ作成に連番オプションを追加
-- パネル時間カラム追加機能
-- 基本統計量と信頼区間の出力形式を拡張
-- 仮説検定、グループ別統計量、プロット表示を追加
-- 信頼区間、不偏性、一致性、漸近正規性のシミュレーション機能を追加
+  <div class="version-block">
+    <div class="version-header">
+      ### v0.3.0
+      <span class="version-date">2026-04-05</span>
+    </div>
+    
+    <ul>
+      <li>
+        <span class="badge-eco add">追加</span> 信頼区間推定の追加
+        <small>※ 詳細: 回帰分析の結果に信頼区間を表示する機能を追加しました。</small>
+      </li>
+      <li>
+        <span class="badge-eco add">追加</span> 列移動機能の追加
+        <small>※ 詳細: 列をドラッグ＆ドロップで移動できるようにする機能を追加しました。</small>
+      </li>
+      <li>
+        <span class="badge-eco add">追加</span> 回帰分析の結果のコピー機能の追加
+        <small>※ 詳細: 回帰分析の結果をtext, markdown, latex形式でクリップボードにコピーする機能を追加しました。</small>
+      </li>
+      <li>
+        <span class="badge-eco fix">修正</span> 言語設定の不具合修正
+        <small>※ 詳細: 言語設定が反映されない問題を修正しました。</small>
+      </li>
+      <li>
+        <span class="badge-eco fix">修正</span> 計算のエラー修正
+        <small>※ 詳細: 計算機能の構文エラーをわかりやすいように修正しました。</small>
+      </li>
+      <li>
+        <span class="badge-eco fix">修正</span> UI/UX の改善
+        <small>※ 詳細: - ダイアログにスクロールを表示、ラグ・リード列の追加のグループ化列を選択方式に変更、テーブル操作メニューと列操作メニューを右クリックで開くように修正しました。</small>
+      </li>
+    </ul>
+  </div>
 
-### 修正
-
-- 初回起動時の言語設定をOSに連動
-- ダイアログのアニメーション不具合を修正
-
-### 削除
-
-- 列複製機能
-
-## v0.3.0 以前
-
-v0.3.0、v0.2.0、v0.1.0 の詳細は CHANGELOG.md を参照してください。
+</div>

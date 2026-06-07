@@ -185,14 +185,41 @@ body {
   margin: 1.2rem 0 2rem;
 }
 
-.sl-markdown-content .home-dev-banner {
-  margin: 1rem 0 0;
-  padding: 0.7rem 1rem;
-  border-left: 4px solid var(--sl-color-accent);
-  border-radius: 0.6rem;
-  background: var(--eco-surface-muted);
-  color: var(--eco-text-muted);
-  font-size: 0.92rem;
+.home-dev-banner {
+  margin: 1.5rem 0;
+  padding: 1rem 1.25rem;
+  
+  /* 左側の線を太くしてアクセントカラー（青や黄色など）を強調 */
+  border-left: 6px solid var(--sl-color-accent);
+  border-radius: 0.5rem;
+  
+  /* ほんのり開発中（工事中）を思わせる斜線の背景をうっすら仕込む */
+  background: repeating-linear-gradient(
+    45deg,
+    var(--sl-color-bg-low-contrast),
+    var(--sl-color-bg-low-contrast) 10px,
+    var(--sl-color-bg) 10px,
+    var(--sl-color-bg) 20px
+  );
+  
+  /* 文字を少し太くし、枠線で囲んで存在感を出す */
+  border: 1px solid var(--sl-color-hairline);
+  color: var(--sl-color-text);
+  font-size: 0.95rem;
+  font-weight: 500;
+  
+  /* アイコンとテキストを綺麗に横並びにする準備 */
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  box-shadow: var(--sl-shadow-sm);
+}
+
+/* 擬似要素を使って、テキストの先頭に自動で「⚠️」アイコンを出現させる */
+.home-dev-banner::before {
+  content: "⚠️";
+  font-size: 1.2rem;
+  flex-shrink: 0;
 }
 
 .sl-markdown-content .home-chip {
@@ -451,13 +478,103 @@ body {
   background: var(--eco-surface-card);
 }
 
-.sl-markdown-content .glossary-list h3 {
+.sl-markdown-content .glossary-list h4 {
   margin: 0;
 }
 
 .sl-markdown-content .glossary-list p {
   margin: 0.45rem 0 0;
   color: var(--eco-text-muted);
+}
+
+/* タイムライン全体のコンテナ */
+.changelog-timeline {
+  border-left: 2px solid var(--sl-color-hairline);
+  margin: 2rem 0 2rem 0.5rem;
+  padding-left: 1.5rem;
+  position: relative;
+}
+
+/* タイムライン内の箇条書きを少し調整 */
+.changelog-timeline ul {
+  list-style: none; /* 標準の・を消す場合はお好みで */
+  padding-left: 0;
+}
+
+/* 各バージョンのブロック */
+.version-block {
+  position: relative;
+  margin-bottom: 3rem;
+}
+
+.version-block li p {
+  margin-bottom: 0.3rem;
+}
+
+/* 👇 理由（smallタグ）を綺麗に一段凹ませて薄くする設定 */
+.version-block li small {
+  display: block;
+  margin-top: 0.1rem;
+  padding-left: 3.5rem;
+  color: var(--sl-color-text-muted);
+  font-size: 0.85rem;
+  line-height: 1.5;
+}
+
+/* 縦線の上に載る「●」のピン */
+.version-block::before {
+  content: "";
+  position: absolute;
+  left: -2rem;
+  top: 0.4rem;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--sl-color-accent);
+  border: 2px solid var(--sl-color-bg);
+}
+
+/* バージョンタイトルの調整 */
+.version-header {
+  display: flex;
+  align-items: baseline;
+  gap: 0.75rem;
+  margin-bottom: 1rem !important;
+}
+
+.version-date {
+  font-size: 0.85rem;
+  color: var(--sl-color-text-muted);
+}
+
+/* 独自カスタムバッジ */
+.badge-eco {
+  display: inline-block;
+  padding: 0.15rem 0.5rem;
+  font-size: 0.75rem;
+  font-weight: bold;
+  border-radius: 0.25rem;
+  margin-right: 0.5rem;
+}
+.badge-eco.add { 
+  background: rgba(59, 130, 246, 0.15); 
+  color: #60a5fa; 
+  border: 1px solid rgba(59, 130, 246, 0.3); 
+}
+.badge-eco.fix { 
+  background: rgba(16, 185, 129, 0.15); 
+  color: #34d399; 
+  border: 1px solid rgba(16, 185, 129, 0.3); 
+}
+.badge-eco.del { 
+  background: rgba(239, 68, 68, 0.15); 
+  color: #f87171; 
+  border: 1px solid rgba(239, 68, 68, 0.3); 
+}
+.badge-eco.internal { 
+  background: rgba(139, 92, 246, 0.15);
+  color: #a78bfa; 
+  border: 1px solid rgba(139, 92, 246, 0.3); 
 }
 
 @media (min-width: 50rem) {
