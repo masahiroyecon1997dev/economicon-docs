@@ -6,6 +6,9 @@ import starlight from '@astrojs/starlight';
 export default defineConfig({
 	site: 'https://masahiroyecon1997dev.github.io',
 	base: '/economicon-docs',
+	redirects: {
+		'/': '/economicon-docs/ja/',
+	},
 	integrations: [
 		starlight({
 			title: 'Economicon',
