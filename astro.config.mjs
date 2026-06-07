@@ -29,15 +29,15 @@ export default defineConfig({
 			sidebar: [
 				{
 					label: 'Economiconについて',
-					autogenerate: { directory: 'about' },
+					items: [{autogenerate: { directory: 'about' }}],
 				},
 				{
 					label: 'ガイド',
-					autogenerate: { directory: 'guides' },
+					items: [{autogenerate: { directory: 'guides' }}],
 				},
 				{
 					label: 'リファレンス',
-					autogenerate: { directory: 'reference' },
+					items: [{autogenerate: { directory: 'reference' }}],
 				},
 			],
 		}),
