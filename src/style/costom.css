@@ -59,8 +59,46 @@
   --eco-shadow-raised: 0 24px 52px rgba(0, 0, 0, 0.34);
 }
 
+:root[data-theme='light'] {
+  /* グレースケール（ライトモードは逆順：番号大＝明るい）
+     :root の同名変数より詳細度が高いので正しく上書きできる */
+  --sl-color-white: #1a202c;
+  --sl-color-gray-1: #2c3e50;
+  --sl-color-gray-2: #4a5568;
+  --sl-color-gray-3: #a0aec0;
+  --sl-color-gray-4: #cbd5e0;
+  --sl-color-gray-5: #e5e7eb;
+  --sl-color-gray-6: #f8f9fa;
+  --sl-color-black: #ffffff;
+
+  /* アクセントカラー */
+  --sl-color-accent-low: #d6eaf8;
+  --sl-color-accent: #3498db;
+  --sl-color-accent-high: #1a6fa8;
+
+  /* ヘッダーバーを #2c3e50 に */
+  --sl-color-bg-nav: #2c3e50;
+
+  /* コンテンツ・目次・サイドバーの背景を白に */
+  --sl-color-bg: #ffffff;
+  --sl-color-bg-sidebar: #ffffff;
+}
+
+/* ライトモードのヘッダー：暗い背景(#2c3e50)に対する可読性確保（WCAG AA 準拠） */
+[data-theme='light'] .header {
+  /* テキスト全般 */
+  --sl-color-text: #e2e8f0;
+  --sl-color-text-accent: #93c5fd;
+  /* Select コンポーネント（言語切り替え・テーマ切り替え）*/
+  --sl-color-gray-2: #cbd5e0;   /* ラベル通常色 */
+  --sl-color-white: #ffffff;    /* ラベルホバー色・アイコンホバー色 */
+  --sl-color-gray-1: #e2e8f0;   /* option 文字色（ドロップダウン展開時） */
+}
+
 html {
   background: var(--eco-surface-page);
+  /* スクロールバーの出現/消失によるレイアウトシフト（ヘッダーガタつき）を防ぐ */
+  scrollbar-gutter: stable;
 }
 
 body {
@@ -144,7 +182,44 @@ body {
   display: flex;
   flex-wrap: wrap;
   gap: 0.75rem;
-  margin: 0 0 2rem;
+  margin: 1.2rem 0 2rem;
+}
+
+.home-dev-banner {
+  margin: 1.5rem 0;
+  padding: 1rem 1.25rem;
+  
+  /* 左側の線を太くしてアクセントカラー（青や黄色など）を強調 */
+  border-left: 6px solid var(--sl-color-accent);
+  border-radius: 0.5rem;
+  
+  /* ほんのり開発中（工事中）を思わせる斜線の背景をうっすら仕込む */
+  background: repeating-linear-gradient(
+    45deg,
+    var(--sl-color-bg-low-contrast),
+    var(--sl-color-bg-low-contrast) 10px,
+    var(--sl-color-bg) 10px,
+    var(--sl-color-bg) 20px
+  );
+  
+  /* 文字を少し太くし、枠線で囲んで存在感を出す */
+  border: 1px solid var(--sl-color-hairline);
+  color: var(--sl-color-text);
+  font-size: 0.95rem;
+  font-weight: 500;
+  
+  /* アイコンとテキストを綺麗に横並びにする準備 */
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  box-shadow: var(--sl-shadow-sm);
+}
+
+/* 擬似要素を使って、テキストの先頭に自動で「⚠️」アイコンを出現させる */
+.home-dev-banner::before {
+  content: "⚠️";
+  font-size: 1.2rem;
+  flex-shrink: 0;
 }
 
 .sl-markdown-content .home-chip {
@@ -352,6 +427,154 @@ body {
   flex-wrap: wrap;
   gap: 0.9rem;
   margin-top: 1.5rem;
+}
+
+.sl-markdown-content .home-video-wrap {
+  margin-top: 1rem;
+  border: 1px solid var(--eco-border-soft);
+  border-radius: var(--eco-radius-card);
+  overflow: hidden;
+  box-shadow: var(--eco-shadow-soft);
+  background: var(--eco-surface-card);
+}
+
+.sl-markdown-content .home-video-wrap iframe {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  height: auto;
+}
+
+.sl-markdown-content .glossary-wrap {
+  margin-top: 1rem;
+}
+
+.sl-markdown-content .glossary-wrap input {
+  width: 100%;
+  margin-top: 0.4rem;
+  padding: 0.6rem 0.75rem;
+  border: 1px solid var(--eco-border-soft);
+  border-radius: 0.5rem;
+  background: var(--eco-surface-card);
+}
+
+.sl-markdown-content .glossary-count {
+  margin: 0.75rem 0 0;
+  color: var(--eco-text-muted);
+}
+
+.sl-markdown-content .glossary-list {
+  list-style: none;
+  margin: 0.75rem 0 0;
+  padding: 0;
+  display: grid;
+  gap: 0.75rem;
+}
+
+.sl-markdown-content .glossary-list li {
+  border: 1px solid var(--eco-border-soft);
+  border-radius: 0.75rem;
+  padding: 0.8rem 0.9rem;
+  background: var(--eco-surface-card);
+}
+
+.sl-markdown-content .glossary-list h4 {
+  margin: 0;
+}
+
+.sl-markdown-content .glossary-list p {
+  margin: 0.45rem 0 0;
+  color: var(--eco-text-muted);
+}
+
+/* タイムライン全体のコンテナ */
+.changelog-timeline {
+  border-left: 2px solid var(--sl-color-hairline);
+  margin: 2rem 0 2rem 0.5rem;
+  padding-left: 1.5rem;
+  position: relative;
+}
+
+/* タイムライン内の箇条書きを少し調整 */
+.changelog-timeline ul {
+  list-style: none; /* 標準の・を消す場合はお好みで */
+  padding-left: 0;
+}
+
+/* 各バージョンのブロック */
+.version-block {
+  position: relative;
+  margin-bottom: 3rem;
+}
+
+.version-block li p {
+  margin-bottom: 0.3rem;
+}
+
+/* 👇 理由（smallタグ）を綺麗に一段凹ませて薄くする設定 */
+.version-block li small {
+  display: block;
+  margin-top: 0.1rem;
+  padding-left: 3.5rem;
+  color: var(--sl-color-text-muted);
+  font-size: 0.85rem;
+  line-height: 1.5;
+}
+
+/* 縦線の上に載る「●」のピン */
+.version-block::before {
+  content: "";
+  position: absolute;
+  left: -2rem;
+  top: 0.4rem;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--sl-color-accent);
+  border: 2px solid var(--sl-color-bg);
+}
+
+/* バージョンタイトルの調整 */
+.version-header {
+  display: flex;
+  align-items: baseline;
+  gap: 0.75rem;
+  margin-bottom: 1rem !important;
+}
+
+.version-date {
+  font-size: 0.85rem;
+  color: var(--sl-color-text-muted);
+}
+
+/* 独自カスタムバッジ */
+.badge-eco {
+  display: inline-block;
+  padding: 0.15rem 0.5rem;
+  font-size: 0.75rem;
+  font-weight: bold;
+  border-radius: 0.25rem;
+  margin-right: 0.5rem;
+}
+.badge-eco.add { 
+  background: rgba(59, 130, 246, 0.15); 
+  color: #60a5fa; 
+  border: 1px solid rgba(59, 130, 246, 0.3); 
+}
+.badge-eco.fix { 
+  background: rgba(16, 185, 129, 0.15); 
+  color: #34d399; 
+  border: 1px solid rgba(16, 185, 129, 0.3); 
+}
+.badge-eco.del { 
+  background: rgba(239, 68, 68, 0.15); 
+  color: #f87171; 
+  border: 1px solid rgba(239, 68, 68, 0.3); 
+}
+.badge-eco.internal { 
+  background: rgba(139, 92, 246, 0.15);
+  color: #a78bfa; 
+  border: 1px solid rgba(139, 92, 246, 0.3); 
 }
 
 @media (min-width: 50rem) {

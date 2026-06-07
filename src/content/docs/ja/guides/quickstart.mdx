@@ -1,0 +1,68 @@
+---
+title: インストール/アンインストール方法
+description: Economiconのインストールとアンインストール手順、トラブル時の確認ポイントをまとめています。
+sidebar:
+  order: 1
+---
+
+import { Steps } from '@astrojs/starlight/components';
+
+このページでは、Economicon のインストールとアンインストールの手順をまとめています。
+
+## インストール
+
+<Steps>
+
+1. **インストーラーをダウンロードする**
+
+   [GitHub Releases ページ](https://github.com/masahiroyecon1997dev/Economicon/releases) を開き、最新バージョンの `Economicon_x.x.x_x64-setup.exe` をダウンロードします。
+
+2. **インストーラーを実行する**
+
+   ダウンロードした `.exe` ファイルをダブルクリックします。
+
+   :::caution[SmartScreen の警告について]
+   本アプリは現在デジタル署名を行っていないため、Windows SmartScreen による警告が表示される場合があります。その場合は「詳細情報」→「実行」を選択してください。
+   :::
+
+3. **WebView2 ランタイム（初回のみ）**
+
+   Microsoft Edge WebView2 が未インストールの場合、初回起動時に自動でダウンロード・インストールされます。インターネット接続が必要です。
+
+4. **起動する**
+
+   インストール完了後、デスクトップのショートカットまたはスタートメニューから Economicon を起動します。
+
+</Steps>
+
+## アンインストール
+
+<Steps>
+
+1. **アプリを終了する**
+
+   Economicon が起動中の場合は、先にアプリを終了してください。
+
+2. **Windows の「インストールされているアプリ」を開く**
+
+   設定 → アプリ → インストールされているアプリ から Economicon を探します。
+
+3. **アンインストールを実行する**
+
+   Economicon のメニューから「アンインストール」を選び、画面指示に従います。
+
+4. **関連ファイルを確認する（必要な場合）**
+
+   アンインストール後に設定ファイルや作業用ファイルが残る場合があります。完全に削除したい場合のみ、手動で確認してください。  
+   Windows版では隠しフォルダである `C:\Users\<ユーザー名>\AppData\Roaming\Economicon`, `C:\Users\<ユーザー名>\AppData\Local\Economicon` に設定ファイルが保存されます。必要に応じてこれらのフォルダを削除してください。
+
+</Steps>
+
+:::note
+現在は Windows 版のみ配布しています。macOS版は未提供です。
+:::
+
+## 次に読むページ
+
+- [アプリの概要](/economicon-docs/ja/about/introduction/) — 現在の実装範囲（OLSのみ）を確認
+- [意見を聞かせて](/economicon-docs/ja/about/feedback/) — 改善要望や不具合を送る

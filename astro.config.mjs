@@ -4,17 +4,25 @@ import starlight from '@astrojs/starlight';
 
 // https://astro.build/config
 export default defineConfig({
+	site: 'https://masahiroyecon1997dev.github.io',
+	base: '/economicon-docs',
 	integrations: [
 		starlight({
 			title: 'Economicon',
-			favicon: '/icon.ico',
+			favicon: 'icon.ico',
 			customCss: ['/src/style/costom.css'],
-			defaultLocale: 'root',
+			defaultLocale: 'ja',
 			locales: {
-				root: { label: '日本語', lang: 'ja' },
+				ja: { label: '日本語', lang: 'ja' },
 				en: { label: 'English', lang: 'en' },
 			},
-			social: [{ icon: 'github', label: 'GitHub', href: '' }],
+			social: [
+				{
+					icon: 'github',
+					label: 'GitHub',
+					href: 'https://github.com/masahiroyecon1997dev/economicon',
+				},
+			],
 			sidebar: [
 				{
 					label: 'Economiconについて',
