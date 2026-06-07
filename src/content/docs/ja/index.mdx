@@ -1,0 +1,83 @@
+---
+title: Economicon
+description: 無料・登録不要で使える計量経済アプリ Economicon の公式ドキュメント。インストール方法、現在の実装範囲、連絡先をまとめています。
+hero:
+  tagline: 無料・登録不要で、まず OLS から始める計量経済アプリ。
+  image:
+    html: '<img src="/economicon-docs/icon.ico" alt="Economicon アプリアイコン" width="128" height="128">'
+  actions:
+    - text: GitHub Releases を開く
+      link: https://github.com/masahiroyecon1997dev/economicon/releases
+      icon: external
+      variant: primary
+    - text: インストール/アンインストール方法を見る
+      link: /economicon-docs/ja/guides/quickstart/
+      icon: right-arrow
+      variant: secondary
+---
+
+import { LinkButton, LinkCard } from '@astrojs/starlight/components';
+
+<p class="home-dev-banner" role="status">
+  このサイトは現在作成中です。ページ内容は順次追加・更新しています。
+</p>
+
+<div class="home-chip-row" aria-label="Economiconの特徴">
+  <span class="home-chip">完全無料</span>
+  <span class="home-chip">登録・ログイン不要</span>
+  <span class="home-chip">Windows 版を配布中</span>
+</div>
+
+<section class="home-section home-cta">
+  <h2>すぐ使うための入口</h2>
+  <p class="home-section-intro">
+    最新版のダウンロードは GitHub Releases から行えます。インストールとアンインストール手順は別ページにまとめています。
+  </p>
+  <div class="home-cta-actions">
+    <a class="sl-link-button primary" href="https://github.com/masahiroyecon1997dev/economicon/releases" target="_blank" rel="noopener noreferrer">GitHub Releases を別タブで開く</a>
+    <LinkButton href="/economicon-docs/ja/guides/quickstart/" variant="secondary" icon="right-arrow">インストール/アンインストール方法</LinkButton>
+  </div>
+</section>
+
+<section class="home-section">
+  <h2>紹介動画</h2>
+  <p class="home-section-intro">動画で全体像を知りたい方は、こちらの紹介動画をご覧ください。</p>
+  <div class="home-video-wrap">
+    <iframe
+      width="560"
+      height="315"
+      src="https://www.youtube.com/embed/5kjL2mY9PZ8"
+      title="Economicon 紹介動画"
+      frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      referrerpolicy="strict-origin-when-cross-origin"
+      allowfullscreen>
+    </iframe>
+  </div>
+</section>
+
+<section class="home-section home-links">
+  <h2>よく使うページ</h2>
+  <div class="home-link-grid">
+    <LinkCard
+      title="インストール/アンインストール方法"
+      href="/economicon-docs/ja/guides/quickstart/"
+      description="導入から削除までの手順を、注意点付きで確認できます。"
+    />
+    <LinkCard
+      title="アプリの概要"
+      href="/economicon-docs/ja/about/introduction/"
+      description="現在の実装範囲と、これから実装予定の機能を確認できます。"
+    />
+    <LinkCard
+      title="意見を聞かせて"
+      href="/economicon-docs/ja/about/feedback/"
+      description="改善提案、バグ報告、欲しい機能の要望を送れます。"
+    />
+    <LinkCard
+      title="リリース情報"
+      href="/economicon-docs/ja/reference/releases/"
+      description="更新履歴と最新版の変更点を時系列で確認できます。"
+    />
+  </div>
+</section>

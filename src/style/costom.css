@@ -182,7 +182,17 @@ body {
   display: flex;
   flex-wrap: wrap;
   gap: 0.75rem;
-  margin: 0 0 2rem;
+  margin: 1.2rem 0 2rem;
+}
+
+.sl-markdown-content .home-dev-banner {
+  margin: 1rem 0 0;
+  padding: 0.7rem 1rem;
+  border-left: 4px solid var(--sl-color-accent);
+  border-radius: 0.6rem;
+  background: var(--eco-surface-muted);
+  color: var(--eco-text-muted);
+  font-size: 0.92rem;
 }
 
 .sl-markdown-content .home-chip {
@@ -390,6 +400,64 @@ body {
   flex-wrap: wrap;
   gap: 0.9rem;
   margin-top: 1.5rem;
+}
+
+.sl-markdown-content .home-video-wrap {
+  margin-top: 1rem;
+  border: 1px solid var(--eco-border-soft);
+  border-radius: var(--eco-radius-card);
+  overflow: hidden;
+  box-shadow: var(--eco-shadow-soft);
+  background: var(--eco-surface-card);
+}
+
+.sl-markdown-content .home-video-wrap iframe {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  height: auto;
+}
+
+.sl-markdown-content .glossary-wrap {
+  margin-top: 1rem;
+}
+
+.sl-markdown-content .glossary-wrap input {
+  width: 100%;
+  margin-top: 0.4rem;
+  padding: 0.6rem 0.75rem;
+  border: 1px solid var(--eco-border-soft);
+  border-radius: 0.5rem;
+  background: var(--eco-surface-card);
+}
+
+.sl-markdown-content .glossary-count {
+  margin: 0.75rem 0 0;
+  color: var(--eco-text-muted);
+}
+
+.sl-markdown-content .glossary-list {
+  list-style: none;
+  margin: 0.75rem 0 0;
+  padding: 0;
+  display: grid;
+  gap: 0.75rem;
+}
+
+.sl-markdown-content .glossary-list li {
+  border: 1px solid var(--eco-border-soft);
+  border-radius: 0.75rem;
+  padding: 0.8rem 0.9rem;
+  background: var(--eco-surface-card);
+}
+
+.sl-markdown-content .glossary-list h3 {
+  margin: 0;
+}
+
+.sl-markdown-content .glossary-list p {
+  margin: 0.45rem 0 0;
+  color: var(--eco-text-muted);
 }
 
 @media (min-width: 50rem) {
